@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="25" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#2c3e50">ER Diagram - User-Scheme Relationship</text>
+  
+  <!-- Users Entity -->
+  <rect x="50" y="80" width="200" height="250" rx="10" fill="#3498db" stroke="#2980b9" stroke-width="3"/>
+  <text x="150" y="110" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="white">USERS</text>
+  <line x1="50" y1="120" x2="250" y2="120" stroke="white" stroke-width="2"/>
+  
+  <text x="60" y="140" font-family="Arial" font-size="11" fill="white">PK _id</text>
+  <text x="60" y="160" font-family="Arial" font-size="11" fill="white">username</text>
+  <text x="60" y="180" font-family="Arial" font-size="11" fill="white">email</text>
+  <text x="60" y="200" font-family="Arial" font-size="11" fill="white">password</text>
+  <text x="60" y="220" font-family="Arial" font-size="11" fill="white">gender</text>
+  <text x="60" y="240" font-family="Arial" font-size="11" fill="white">incomeGroup</text>
+  <text x="60" y="260" font-family="Arial" font-size="11" fill="white">state</text>
+  <text x="60" y="280" font-family="Arial" font-size="11" fill="white">age</text>
+  <text x="60" y="300" font-family="Arial" font-size="11" fill="white">createdAt</text>
+  <text x="60" y="320" font-family="Arial" font-size="11" fill="white">updatedAt</text>
+  
+  <!-- Schemes Entity -->
+  <rect x="550" y="80" width="200" height="250" rx="10" fill="#27ae60" stroke="#229954" stroke-width="3"/>
+  <text x="650" y="110" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="white">SCHEMES</text>
+  <line x1="550" y1="120" x2="750" y2="120" stroke="white" stroke-width="2"/>
+  
+  <text x="560" y="140" font-family="Arial" font-size="11" fill="white">PK _id</text>
+  <text x="560" y="160" font-family="Arial" font-size="11" fill="white">schemeName</text>
+  <text x="560" y="180" font-family="Arial" font-size="11" fill="white">schemeShortTitle</text>
+  <text x="560" y="200" font-family="Arial" font-size="11" fill="white">state</text>
+  <text x="560" y="220" font-family="Arial" font-size="11" fill="white">level</text>
+  <text x="560" y="240" font-family="Arial" font-size="11" fill="white">nodalMinistryName</text>
+  <text x="560" y="260" font-family="Arial" font-size="11" fill="white">tags</text>
+  <text x="560" y="280" font-family="Arial" font-size="11" fill="white">schemeCategory</text>
+  <text x="560" y="300" font-family="Arial" font-size="11" fill="white">detailedDescription_md</text>
+  <text x="560" y="320" font-family="Arial" font-size="11" fill="white">eligibilityDescription_md</text>
+  
+  <!-- Relationship Line -->
+  <line x1="250" y1="200" x2="550" y2="200" stroke="#2c3e50" stroke-width="3"/>
+  
+  <!-- Relationship Diamond -->
+  <polygon points="400,185 420,200 400,215 380,200" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="400" y="205" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="white">M:N</text>
+  
+  <!-- Relationship Labels -->
+  <text x="300" y="185" font-family="Arial" font-size="10" fill="#7f8c8d">favorites</text>
+  <text x="500" y="185" font-family="Arial" font-size="10" fill="#7f8c8d">favorited_by</text>
+  
+  <!-- Cardinality -->
+  <text x="260" y="190" font-family="Arial" font-size="12" font-weight="bold" fill="#2c3e50">1</text>
+  <text x="530" y="190" font-family="Arial" font-size="12" font-weight="bold" fill="#2c3e50">N</text>
+  
+  <!-- Note -->
+  <rect x="300" y="350" width="200" height="40" rx="5" fill="#95a5a6" stroke="#7f8c8d"/>
+  <text x="400" y="365" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Note: Schemes stored in Excel file</text>
+  <text x="400" y="380" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Relationship implemented via array in User</text>
+</svg>

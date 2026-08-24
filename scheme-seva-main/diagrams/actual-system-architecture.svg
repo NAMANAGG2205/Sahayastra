@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Background -->
+  <rect width="900" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#2c3e50">Sahayastra - Actual System Architecture</text>
+  
+  <!-- Frontend Box -->
+  <rect x="50" y="60" width="800" height="120" rx="10" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="450" y="85" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">FRONTEND (React.js)</text>
+  
+  <!-- Frontend Components -->
+  <rect x="70" y="100" width="100" height="30" rx="5" fill="#5dade2" stroke="#3498db"/>
+  <text x="120" y="120" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Home</text>
+  
+  <rect x="180" y="100" width="100" height="30" rx="5" fill="#5dade2" stroke="#3498db"/>
+  <text x="230" y="120" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Schemes</text>
+  
+  <rect x="290" y="100" width="100" height="30" rx="5" fill="#5dade2" stroke="#3498db"/>
+  <text x="340" y="120" text-anchor="middle" font-family="Arial" font-size="10" fill="white">SchemeDetails</text>
+  
+  <rect x="400" y="100" width="100" height="30" rx="5" fill="#5dade2" stroke="#3498db"/>
+  <text x="450" y="120" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Login/Signup</text>
+  
+  <rect x="510" y="100" width="100" height="30" rx="5" fill="#5dade2" stroke="#3498db"/>
+  <text x="560" y="120" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Profile</text>
+  
+  <rect x="620" y="100" width="100" height="30" rx="5" fill="#5dade2" stroke="#3498db"/>
+  <text x="670" y="120" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Recommendations</text>
+  
+  <rect x="730" y="100" width="100" height="30" rx="5" fill="#5dade2" stroke="#3498db"/>
+  <text x="780" y="120" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Chatbot</text>
+  
+  <!-- Frontend Sub-components -->
+  <text x="70" y="150" font-family="Arial" font-size="9" fill="white">Components: Header, Footer, SchemeCard, Pagination</text>
+  <text x="70" y="165" font-family="Arial" font-size="9" fill="white">Context: UserContext (Auth State)</text>
+  <text x="70" y="180" font-family="Arial" font-size="9" fill="white">Services: schemeService, userService</text>
+  
+  <!-- Arrow Down -->
+  <line x1="450" y1="180" x2="450" y2="220" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="470" y="205" font-family="Arial" font-size="10" fill="#7f8c8d">REST API (Axios)</text>
+  
+  <!-- Backend Box -->
+  <rect x="50" y="220" width="800" height="120" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="450" y="245" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">BACKEND (Node.js + Express)</text>
+  
+  <!-- Backend Components -->
+  <rect x="70" y="260" width="120" height="30" rx="5" fill="#ec7063" stroke="#e74c3c"/>
+  <text x="130" y="280" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Controllers</text>
+  
+  <rect x="200" y="260" width="120" height="30" rx="5" fill="#ec7063" stroke="#e74c3c"/>
+  <text x="260" y="280" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Routes</text>
+  
+  <rect x="330" y="260" width="120" height="30" rx="5" fill="#ec7063" stroke="#e74c3c"/>
+  <text x="390" y="280" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Middlewares</text>
+  
+  <rect x="460" y="260" width="120" height="30" rx="5" fill="#ec7063" stroke="#e74c3c"/>
+  <text x="520" y="280" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Models</text>
+  
+  <rect x="590" y="260" width="120" height="30" rx="5" fill="#ec7063" stroke="#e74c3c"/>
+  <text x="650" y="280" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Services</text>
+  
+  <rect x="720" y="260" width="120" height="30" rx="5" fill="#ec7063" stroke="#e74c3c"/>
+  <text x="780" y="280" text-anchor="middle" font-family="Arial" font-size="10" fill="white">DB Layer</text>
+  
+  <!-- Backend Sub-components -->
+  <text x="70" y="310" font-family="Arial" font-size="9" fill="white">Controllers: user, scheme, schemev2, chatbot, recommendation</text>
+  <text x="70" y="325" font-family="Arial" font-size="9" fill="white">Routes: /api/v1/users, /api/v2/schemes, /api/v1/chatbot</text>
+  
+  <!-- Arrows to databases -->
+  <line x1="450" y1="340" x2="450" y2="380" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="150" y1="380" x2="750" y2="380" stroke="#2c3e50" stroke-width="2"/>
+  
+  <line x1="150" y1="380" x2="150" y2="420" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="380" x2="350" y2="420" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="550" y1="380" x2="550" y2="420" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="750" y1="380" x2="750" y2="420" stroke="#2c3e50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Excel DB -->
+  <rect x="70" y="420" width="160" height="100" rx="10" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+  <text x="150" y="445" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">Excel DB</text>
+  <text x="150" y="465" text-anchor="middle" font-family="Arial" font-size="10" fill="white">(excelDb.js)</text>
+  <line x1="90" y1="475" x2="210" y2="475" stroke="white" stroke-width="1"/>
+  <text x="150" y="495" text-anchor="middle" font-family="Arial" font-size="10" fill="white">300+ Schemes</text>
+  <text x="150" y="510" text-anchor="middle" font-family="Arial" font-size="9" fill="white">SCHEMES_DATA array</text>
+  
+  <!-- MongoDB -->
+  <rect x="270" y="420" width="160" height="100" rx="10" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+  <text x="350" y="445" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">MongoDB</text>
+  <text x="350" y="465" text-anchor="middle" font-family="Arial" font-size="10" fill="white">(Optional)</text>
+  <line x1="290" y1="475" x2="410" y2="475" stroke="white" stroke-width="1"/>
+  <text x="350" y="495" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Users Collection</text>
+  <text x="350" y="510" text-anchor="middle" font-family="Arial" font-size="9" fill="white">Favorites (Array)</text>
+  
+  <!-- Gemini AI -->
+  <rect x="470" y="420" width="160" height="100" rx="10" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="550" y="445" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">Gemini AI</text>
+  <text x="550" y="465" text-anchor="middle" font-family="Arial" font-size="10" fill="white">(Google API)</text>
+  <line x1="490" y1="475" x2="610" y2="475" stroke="white" stroke-width="1"/>
+  <text x="550" y="495" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Chatbot Service</text>
+  <text x="550" y="510" text-anchor="middle" font-family="Arial" font-size="9" fill="white">Multilingual NLP</text>
+  
+  <!-- Environment -->
+  <rect x="670" y="420" width="160" height="100" rx="10" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2"/>
+  <text x="750" y="445" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">Environment</text>
+  <text x="750" y="465" text-anchor="middle" font-family="Arial" font-size="10" fill="white">(.env)</text>
+  <line x1="690" y1="475" x2="810" y2="475" stroke="white" stroke-width="1"/>
+  <text x="750" y="495" text-anchor="middle" font-family="Arial" font-size="10" fill="white">PORT, MONGODB_URI</text>
+  <text x="750" y="510" text-anchor="middle" font-family="Arial" font-size="9" fill="white">GEMINI_API_KEY</text>
+  
+  <!-- Note -->
+  <rect x="50" y="550" width="800" height="40" rx="5" fill="#ecf0f1" stroke="#bdc3c7"/>
+  <text x="450" y="565" text-anchor="middle" font-family="Arial" font-size="10" fill="#7f8c8d">Note: MongoDB is optional - app works in offline mode without MongoDB using localStorage for favorites</text>
+  <text x="450" y="580" text-anchor="middle" font-family="Arial" font-size="10" fill="#7f8c8d">Excel DB provides in-memory fallback when Excel file reading fails</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50"/>
+    </marker>
+  </defs>
+</svg>

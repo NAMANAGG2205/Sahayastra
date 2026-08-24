@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile – Sahayastra</title>
+    <style>
+        /* System font stack — no external CDN, loads instantly */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 50%, #eff6ff 100%);
+            min-height: 100vh; color: #111827;
+        }
+        nav {
+            background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e5e7eb; padding: 12px 28px;
+            display: flex; align-items: center; justify-content: space-between;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-logo span { font-size: 20px; font-weight: 800; color: #16a34a; }
+        .nav-back {
+            display: flex; align-items: center; gap: 6px; text-decoration: none;
+            color: #6b7280; font-size: 13px; font-weight: 600;
+            padding: 7px 14px; border-radius: 10px; border: 1.5px solid #e5e7eb;
+            background: white; transition: all 0.15s;
+        }
+        .nav-back:hover { color: #16a34a; border-color: #16a34a; background: #f0fdf4; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 28px 20px; display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+
+        /* SIDEBAR */
+        .sidebar { width: 272px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px; }
+        .card { background: white; border-radius: 22px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; }
+
+        .avatar-banner { height: 72px; background: linear-gradient(135deg, #16a34a, #15803d); }
+        .avatar-body { padding: 0 18px 20px; text-align: center; }
+        .avatar-circle {
+            width: 84px; height: 84px; border-radius: 50%;
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            border: 4px solid white; box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 26px; font-weight: 800; color: white; margin: -42px auto 12px;
+        }
+        .user-name { font-size: 17px; font-weight: 800; color: #111827; margin-bottom: 3px; }
+        .user-email { font-size: 11px; color: #9ca3af; margin-bottom: 12px; }
+        .role-badge { display: inline-block; padding: 3px 12px; background: #f0fdf4; color: #16a34a; border-radius: 20px; font-size: 10px; font-weight: 700; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .pad { padding: 18px; }
+        .section-title { font-size: 10px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; }
+        .stat-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+        .stat-left { display: flex; align-items: center; gap: 8px; }
+        .stat-icon { border-radius: 8px; padding: 6px 7px; font-size: 13px; }
+        .stat-label { font-size: 12px; color: #6b7280; font-weight: 500; }
+        .stat-value { font-size: 14px; font-weight: 800; color: #111827; }
+
+        .bar-bg { width: 100%; background: #f3f4f6; border-radius: 10px; height: 7px; overflow: hidden; }
+        .bar-fill { height: 100%; border-radius: 10px; background: linear-gradient(90deg, #16a34a, #22c55e); transition: width 0.9s ease; }
+        .comp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 9px; }
+        .comp-label { font-size: 12px; font-weight: 700; color: #374151; }
+        .comp-pct { font-size: 15px; font-weight: 800; }
+        .comp-hint { font-size: 11px; color: #9ca3af; margin-top: 7px; }
+
+        .quick-pill { display: flex; align-items: center; gap: 8px; padding: 7px 11px; background: #f9fafb; border-radius: 10px; border: 1px solid #f3f4f6; margin-bottom: 7px; font-size: 12px; font-weight: 600; color: #374151; }
+
+        /* MAIN */
+        .main { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 14px; }
+        .topbar { background: white; border-radius: 18px; padding: 16px 22px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .topbar-title { font-size: 19px; font-weight: 800; color: #111827; }
+        .topbar-sub { font-size: 12px; color: #6b7280; margin-top: 2px; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; background: linear-gradient(135deg, #16a34a, #15803d); color: white; border: none; border-radius: 11px; font-weight: 700; font-size: 13px; cursor: pointer; text-decoration: none; box-shadow: 0 3px 10px rgba(22,163,74,0.3); transition: transform 0.15s; }
+        .btn-primary:hover { transform: translateY(-1px); }
+
+        .tab-panel { background: white; border-radius: 22px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; }
+        .tabs { display: flex; border-bottom: 1px solid #f3f4f6; padding: 0 6px; }
+        .tab-btn { flex: 1; padding: 14px 6px; display: flex; align-items: center; justify-content: center; gap: 5px; border: none; background: none; cursor: pointer; font-size: 12px; font-weight: 700; color: #9ca3af; border-bottom: 2.5px solid transparent; transition: all 0.15s; font-family: inherit; }
+        .tab-btn.active { color: #16a34a; border-bottom-color: #16a34a; }
+        .tab-content { padding: 24px; display: none; }
+        .tab-content.active { display: block; }
+
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: 12px; }
+        .info-card { padding: 14px; border-radius: 14px; background: #f9fafb; border: 1.5px solid #f3f4f6; transition: all 0.15s; }
+        .info-card:hover { border-color: #bbf7d0; background: #f0fdf4; }
+        .info-card.wide { grid-column: 1 / -1; }
+        .ic-label { font-size: 10px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 7px; display: flex; align-items: center; gap: 4px; }
+        .ic-label .dot { width: 5px; height: 5px; border-radius: 50%; background: #16a34a; }
+        .ic-value { font-size: 13px; font-weight: 700; color: #111827; }
+        .ic-value.empty { color: #d1d5db; font-style: italic; font-weight: 400; }
+
+        .fin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 18px; }
+        .fin-card { border-radius: 18px; padding: 20px; }
+        .fin-card.green { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1.5px solid #86efac; }
+        .fin-card.blue { background: linear-gradient(135deg, #eff6ff, #dbeafe); border: 1.5px solid #93c5fd; }
+        .fin-lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 8px; }
+        .fin-lbl.g { color: #15803d; } .fin-lbl.b { color: #1d4ed8; }
+        .fin-val { font-size: 24px; font-weight: 800; }
+        .fin-val.g { color: #14532d; } .fin-val.b { color: #1e3a8a; }
+        .fin-note { background: #f0fdf4; border: 1px solid #d1fae5; border-radius: 16px; padding: 18px; }
+        .fin-note h3 { font-size: 13px; font-weight: 800; color: #15803d; margin-bottom: 6px; }
+        .fin-note p { font-size: 12px; color: #6b7280; line-height: 1.7; }
+
+        .int-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)); gap: 9px; }
+        .int-pill { padding: 13px; border-radius: 14px; background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1.5px solid #bbf7d0; display: flex; align-items: center; gap: 9px; }
+        .int-emoji { font-size: 20px; }
+        .int-label { font-size: 11px; font-weight: 700; color: #15803d; }
+        .empty-state { text-align: center; padding: 50px 20px; }
+        .empty-state .e { font-size: 48px; margin-bottom: 14px; }
+
+        /* SKELETON */
+        .sk { background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%); background-size: 200% 100%; animation: shimmer 1.2s infinite; border-radius: 8px; }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+        .sk-circle { border-radius: 50%; }
+
+        /* ERROR */
+        #error-state { display: none; text-align: center; padding: 80px 20px; }
+
+        @media (max-width: 700px) { .sidebar { width: 100%; } .container { flex-direction: column; } }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-logo">
+        <img src="/circular_logo.jpg" alt="" style="height:36px;width:36px;border-radius:50%;object-fit:cover;" onerror="this.style.display='none'" />
+        <span>Sahayastra</span>
+    </a>
+    <a href="/" class="nav-back">← Home</a>
+</nav>
+
+<!-- SKELETON shown instantly -->
+<div class="container" id="skeleton-view">
+    <div class="sidebar">
+        <div class="card">
+            <div class="avatar-banner"></div>
+            <div class="avatar-body">
+                <div class="avatar-circle sk sk-circle" style="background:none">&nbsp;</div>
+                <div class="sk" style="height:16px;width:120px;margin:0 auto 8px"></div>
+                <div class="sk" style="height:11px;width:160px;margin:0 auto 14px"></div>
+                <div class="sk" style="height:20px;width:60px;margin:0 auto;border-radius:20px"></div>
+            </div>
+        </div>
+        <div class="card pad">
+            <div class="sk" style="height:10px;width:80px;margin-bottom:16px"></div>
+            <div class="sk" style="height:34px;border-radius:10px;margin-bottom:10px"></div>
+            <div class="sk" style="height:34px;border-radius:10px;margin-bottom:10px"></div>
+            <div class="sk" style="height:34px;border-radius:10px"></div>
+        </div>
+        <div class="card pad">
+            <div class="sk" style="height:10px;width:120px;margin-bottom:12px"></div>
+            <div class="sk" style="height:7px;border-radius:10px"></div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="card" style="padding:18px 22px;">
+            <div class="sk" style="height:20px;width:200px;margin-bottom:8px"></div>
+            <div class="sk" style="height:12px;width:260px"></div>
+        </div>
+        <div class="card">
+            <div style="display:flex;gap:0;border-bottom:1px solid #f3f4f6;padding:0 8px">
+                <div class="sk" style="height:48px;flex:1;border-radius:0;margin:4px"></div>
+                <div class="sk" style="height:48px;flex:1;border-radius:0;margin:4px;opacity:.5"></div>
+                <div class="sk" style="height:48px;flex:1;border-radius:0;margin:4px;opacity:.5"></div>
+            </div>
+            <div style="padding:24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:12px">
+                <div class="sk" style="height:72px;border-radius:14px"></div>
+                <div class="sk" style="height:72px;border-radius:14px"></div>
+                <div class="sk" style="height:72px;border-radius:14px"></div>
+                <div class="sk" style="height:72px;border-radius:14px"></div>
+                <div class="sk" style="height:72px;border-radius:14px"></div>
+                <div class="sk" style="height:72px;border-radius:14px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- REAL CONTENT hidden until data loads -->
+<div class="container" id="main-content" style="display:none">
+    <div class="sidebar">
+        <div class="card">
+            <div class="avatar-banner"></div>
+            <div class="avatar-body">
+                <div class="avatar-circle" id="avatar-initials">?</div>
+                <div class="user-name" id="profile-name">—</div>
+                <div class="user-email" id="profile-email">—</div>
+                <span class="role-badge" id="profile-role">User</span>
+            </div>
+        </div>
+        <div class="card pad">
+            <div class="section-title">Overview</div>
+            <div class="stat-row"><div class="stat-left"><div class="stat-icon" style="background:#fef3c7">⭐</div><span class="stat-label">Saved Schemes</span></div><span class="stat-value" id="stat-saved">0</span></div>
+            <div class="stat-row"><div class="stat-left"><div class="stat-icon" style="background:#fce7f3">❤️</div><span class="stat-label">Interests</span></div><span class="stat-value" id="stat-interests">0</span></div>
+            <div class="stat-row"><div class="stat-left"><div class="stat-icon" style="background:#f3e8ff">🏆</div><span class="stat-label">Profile Score</span></div><span class="stat-value" id="stat-score">0%</span></div>
+        </div>
+        <div class="card pad">
+            <div class="comp-header"><span class="comp-label">Profile Completion</span><span class="comp-pct" id="comp-pct" style="color:#f59e0b">0%</span></div>
+            <div class="bar-bg"><div class="bar-fill" id="comp-bar" style="width:0%"></div></div>
+            <p class="comp-hint" id="comp-hint">Complete your profile for better recommendations</p>
+        </div>
+        <div class="card pad" id="quick-card">
+            <div class="section-title">Quick Info</div>
+            <div id="quick-pills"></div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="topbar">
+            <div><div class="topbar-title" id="welcome-msg">Welcome back!</div><div class="topbar-sub">Manage your profile and preferences</div></div>
+            <a href="/" class="btn-primary">🏠 Home</a>
+        </div>
+        <div class="tab-panel">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab(0)">👤 Personal</button>
+                <button class="tab-btn" onclick="switchTab(1)">💰 Financial</button>
+                <button class="tab-btn" onclick="switchTab(2)">❤️ Interests</button>
+            </div>
+            <div class="tab-content active" id="tab-0"><div class="info-grid" id="personal-grid"></div></div>
+            <div class="tab-content" id="tab-1">
+                <div class="fin-grid">
+                    <div class="fin-card green"><span class="fin-lbl g">💵 Annual Income</span><div class="fin-val g" id="fin-income">Not set</div></div>
+                    <div class="fin-card blue"><span class="fin-lbl b">🛡️ Category</span><div class="fin-val b" id="fin-group">Not set</div></div>
+                </div>
+                <div class="fin-note"><h3>🎯 Why This Matters</h3><p>Income &amp; category data helps Sahayastra find the most relevant schemes — <strong>PM-KISAN</strong>, <strong>Ayushman Bharat</strong>, <strong>MUDRA Loans</strong> all have income-based eligibility.</p></div>
+            </div>
+            <div class="tab-content" id="tab-2"><div id="int-container"></div></div>
+        </div>
+    </div>
+</div>
+
+<div id="error-state">
+    <div style="font-size:52px;margin-bottom:14px">🔐</div>
+    <p style="font-size:17px;font-weight:800;color:#374151;margin-bottom:6px">Please sign in first</p>
+    <p style="color:#9ca3af;font-size:13px;margin-bottom:22px">You need to be logged in to view your profile.</p>
+    <a href="/login" class="btn-primary" style="display:inline-flex">Sign In</a>
+</div>
+
+<script>
+const API = 'http://localhost:5000';
+const ICONS = {"Women and Child":"👩‍👧","Utility & Sanitation":"🚿","Travel & Tourism":"✈️","Transport & Infrastructure":"🚇","Sports & Culture":"🏆","Social welfare & Empowerment":"🤝","Skills & Employment":"💼","Science, IT & Communications":"💻","Public Safety, Law & Justice":"⚖️","Housing & Shelter":"🏠","Health & Wellness":"🏥","Education & Learning":"🎓","Business & Entrepreneurship":"📈","Banking, Financial Services and Insurance":"🏦","Agriculture, Rural & Environment":"🌾"};
+
+const $ = id => document.getElementById(id);
+
+function initials(n) { return n ? n.split(' ').map(x=>x[0]).join('').toUpperCase().slice(0,2) : '?'; }
+function completion(d) {
+    const fields = ["name","phoneNumber","gender","dob","fatherName","state","occupation","income","incomeGroup"];
+    return Math.round(((fields.filter(f=>d[f]&&d[f]!=='').length + ((d.interests||[]).length>0?1:0)) / (fields.length+1))*100);
+}
+function ic(label, val, wide) {
+    return `<div class="info-card${wide?' wide':''}"><div class="ic-label"><span class="dot"></span>${label}</div><div class="ic-value${!val?' empty':''}">${val||'Not set'}</div></div>`;
+}
+function switchTab(i) {
+    document.querySelectorAll('.tab-btn').forEach((b,x)=>b.classList.toggle('active',x===i));
+    document.querySelectorAll('.tab-content').forEach((c,x)=>c.classList.toggle('active',x===i));
+}
+
+async function load() {
+    try {
+        const res = await fetch(`${API}/api/v1/users/getme`, { credentials: 'include' });
+        if (!res.ok) throw new Error();
+        const json = await res.json();
+        const d = json.data || json;
+        const comp = completion(d);
+
+        $('avatar-initials').textContent = initials(d.name);
+        $('profile-name').textContent = d.name || 'Citizen';
+        $('profile-email').textContent = d.email || '';
+        $('profile-role').textContent = d.role || 'User';
+        $('welcome-msg').textContent = `Welcome back, ${(d.name||'there').split(' ')[0]}!`;
+
+        $('stat-saved').textContent = (d.favorites||[]).length;
+        $('stat-interests').textContent = (d.interests||[]).length;
+        $('stat-score').textContent = comp+'%';
+        $('comp-pct').textContent = comp+'%';
+        $('comp-pct').style.color = comp===100?'#16a34a':'#f59e0b';
+        $('comp-bar').style.width = comp+'%';
+        if (comp===100) { $('comp-bar').style.background='linear-gradient(90deg,#16a34a,#22c55e)'; $('comp-hint').textContent='✓ Profile complete!'; $('comp-hint').style.color='#16a34a'; }
+
+        const pills = [d.state&&{i:'📍',t:d.state},d.occupation&&{i:'💼',t:d.occupation},d.gender&&{i:'👤',t:d.gender.charAt(0).toUpperCase()+d.gender.slice(1)},d.incomeGroup&&{i:'🛡️',t:d.incomeGroup}].filter(Boolean);
+        if (pills.length) $('quick-pills').innerHTML = pills.map(p=>`<div class="quick-pill"><span>${p.i}</span>${p.t}</div>`).join('');
+        else $('quick-card').style.display='none';
+
+        const dob = d.dob ? new Date(d.dob).toLocaleDateString('en-IN',{day:'2-digit',month:'long',year:'numeric'}) : '';
+        $('personal-grid').innerHTML = [
+            ic('Full Name',d.name), ic("Father's Name",d.fatherName),
+            ic('Date of Birth',dob), ic('Age',d.age?d.age+' years':''),
+            ic('Gender',d.gender?d.gender.charAt(0).toUpperCase()+d.gender.slice(1):''),
+            ic('Phone Number',d.phoneNumber), ic('State / UT',d.state),
+            ic('Occupation',d.occupation), ic('Email Address',d.email,true)
+        ].join('');
+
+        $('fin-income').textContent = d.income ? '₹'+Number(d.income).toLocaleString('en-IN') : 'Not set';
+        $('fin-group').textContent = d.incomeGroup || 'Not set';
+
+        const ints = d.interests||[];
+        $('int-container').innerHTML = ints.length
+            ? `<p style="font-size:13px;color:#6b7280;margin-bottom:18px">Following <strong style="color:#16a34a">${ints.length}</strong> area${ints.length!==1?'s':''}</p><div class="int-grid">${ints.map(i=>`<div class="int-pill"><span class="int-emoji">${ICONS[i]||'🔖'}</span><span class="int-label">${i}</span></div>`).join('')}</div>`
+            : `<div class="empty-state"><div class="e">🌟</div><p style="font-weight:800;color:#374151;margin-bottom:6px">No interests selected</p><p style="color:#9ca3af;font-size:13px">Update your profile in the app to add interests.</p></div>`;
+
+        $('skeleton-view').style.display = 'none';
+        $('main-content').style.display = 'flex';
+    } catch {
+        $('skeleton-view').style.display = 'none';
+        $('error-state').style.display = 'block';
+    }
+}
+
+load();
+</script>
+</body>
+</html>

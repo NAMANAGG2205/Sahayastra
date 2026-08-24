@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <!-- Background -->
+  <rect width="700" height="500" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#2c3e50">Frontend Architecture - Sahayastra (React.js)</text>
+  
+  <!-- Main Box -->
+  <rect x="50" y="50" width="600" height="430" rx="10" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="350" y="75" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">src/</text>
+  
+  <!-- Components -->
+  <rect x="70" y="90" width="180" height="80" rx="5" fill="#5dade2" stroke="#3498db"/>
+  <text x="160" y="110" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">components/</text>
+  <text x="80" y="130" font-family="Arial" font-size="10" fill="white">common/ (Header, Footer,</text>
+  <text x="80" y="145" font-family="Arial" font-size="10" fill="white">Chatbot, Pagination,</text>
+  <text x="80" y="160" font-family="Arial" font-size="10" fill="white">SchemeCard)</text>
+  
+  <rect x="270" y="90" width="180" height="80" rx="5" fill="#5dade2" stroke="#3498db"/>
+  <text x="360" y="110" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">pages/</text>
+  <text x="280" y="130" font-family="Arial" font-size="10" fill="white">home/ (Home, HeroSection,</text>
+  <text x="280" y="145" font-family="Arial" font-size="10" fill="white">Categories, AboutUs)</text>
+  <text x="280" y="160" font-family="Arial" font-size="10" fill="white">schemes/, schemeDetails/</text>
+  
+  <rect x="470" y="90" width="160" height="80" rx="5" fill="#5dade2" stroke="#3498db"/>
+  <text x="550" y="110" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">pages/ (cont.)</text>
+  <text x="480" y="130" font-family="Arial" font-size="10" fill="white">auth/ (Login, Signup)</text>
+  <text x="480" y="145" font-family="Arial" font-size="10" fill="white">profile/ (Profile)</text>
+  <text x="480" y="160" font-family="Arial" font-size="10" fill="white">recommendations/</text>
+  
+  <!-- Services -->
+  <rect x="70" y="190" width="280" height="60" rx="5" fill="#48c9b0" stroke="#1abc9c"/>
+  <text x="210" y="215" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">services/</text>
+  <text x="80" y="235" font-family="Arial" font-size="10" fill="white">schemes/schemeService.js, users/userService.js</text>
+  
+  <!-- Context -->
+  <rect x="370" y="190" width="260" height="60" rx="5" fill="#48c9b0" stroke="#1abc9c"/>
+  <text x="500" y="215" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">context/</text>
+  <text x="380" y="235" font-family="Arial" font-size="10" fill="white">UserContext.js (Auth State Management)</text>
+  
+  <!-- Helper -->
+  <rect x="70" y="270" width="180" height="60" rx="5" fill="#f39c12" stroke="#e67e22"/>
+  <text x="160" y="295" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">helper/</text>
+  <text x="80" y="315" font-family="Arial" font-size="10" fill="white">generatePdf.js, shareScheme.js</text>
+  
+  <!-- Routes -->
+  <rect x="270" y="270" width="180" height="60" rx="5" fill="#f39c12" stroke="#e67e22"/>
+  <text x="360" y="295" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">routes/</text>
+  <text x="280" y="315" font-family="Arial" font-size="10" fill="white">ProtectedRoutes, Unauthenticated</text>
+  
+  <!-- Utils -->
+  <rect x="470" y="270" width="160" height="60" rx="5" fill="#f39c12" stroke="#e67e22"/>
+  <text x="550" y="295" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">utils/</text>
+  <text x="480" y="315" font-family="Arial" font-size="10" fill="white">images/, assets/</text>
+  
+  <!-- Root Files -->
+  <rect x="70" y="350" width="560" height="50" rx="5" fill="#9b59b6" stroke="#8e44ad"/>
+  <text x="350" y="375" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">Root Files: App.js, index.js, index.css</text>
+  
+  <!-- Libraries -->
+  <rect x="70" y="420" width="560" height="50" rx="5" fill="#95a5a6" stroke="#7f8c8d"/>
+  <text x="350" y="440" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">Key Libraries: React Router, Axios, Material-UI, Tailwind CSS, React Hot Toast, React Markdown</text>
+  <text x="350" y="455" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Lucide React (Icons), jspdf (PDF), html2pdf.js</text>
+</svg>

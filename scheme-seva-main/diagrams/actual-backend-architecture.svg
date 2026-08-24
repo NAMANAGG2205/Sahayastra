@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <!-- Background -->
+  <rect width="700" height="500" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#2c3e50">Backend Architecture - Sahayastra (Node.js + Express)</text>
+  
+  <!-- Main Box -->
+  <rect x="50" y="50" width="600" height="430" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="350" y="75" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="white">Backend/</text>
+  
+  <!-- Entry Point -->
+  <rect x="70" y="90" width="560" height="40" rx="5" fill="#c0392b" stroke="#922b21"/>
+  <text x="350" y="115" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">Entry Point: index.js → app.js</text>
+  
+  <!-- Controllers -->
+  <rect x="70" y="150" width="180" height="80" rx="5" fill="#ec7063" stroke="#e74c3c"/>
+  <text x="160" y="170" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">controllers/</text>
+  <text x="80" y="190" font-family="Arial" font-size="10" fill="white">user.controller.js</text>
+  <text x="80" y="205" font-family="Arial" font-size="10" fill="white">scheme.controller.js</text>
+  <text x="80" y="220" font-family="Arial" font-size="10" fill="white">schemev2.controller.js</text>
+  
+  <!-- Routes -->
+  <rect x="270" y="150" width="180" height="80" rx="5" fill="#ec7063" stroke="#e74c3c"/>
+  <text x="360" y="170" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">routes/</text>
+  <text x="280" y="190" font-family="Arial" font-size="10" fill="white">user.routes.js</text>
+  <text x="280" y="205" font-family="Arial" font-size="10" fill="white">scheme.routes.js</text>
+  <text x="280" y="220" font-family="Arial" font-size="10" fill="white">schemev2.routes.js</text>
+  
+  <!-- Models -->
+  <rect x="470" y="150" width="160" height="80" rx="5" fill="#ec7063" stroke="#e74c3c"/>
+  <text x="550" y="170" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">models/</text>
+  <text x="480" y="190" font-family="Arial" font-size="10" fill="white">user.model.js</text>
+  <text x="480" y="205" font-family="Arial" font-size="10" fill="white">scheme.model.js</text>
+  <text x="480" y="220" font-family="Arial" font-size="10" fill="white">chatbot.model.js</text>
+  
+  <!-- Middlewares -->
+  <rect x="70" y="250" width="180" height="60" rx="5" fill="#f39c12" stroke="#e67e22"/>
+  <text x="160" y="275" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">middlewares/</text>
+  <text x="80" y="295" font-family="Arial" font-size="10" fill="white">auth.middleware.js</text>
+  
+  <!-- Services -->
+  <rect x="270" y="250" width="180" height="60" rx="5" fill="#f39c12" stroke="#e67e22"/>
+  <text x="360" y="275" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">services/</text>
+  <text x="280" y="295" font-family="Arial" font-size="10" fill="white">chatbot.service.js</text>
+  
+  <!-- DB Layer -->
+  <rect x="470" y="250" width="160" height="60" rx="5" fill="#f39c12" stroke="#e67e22"/>
+  <text x="550" y="275" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">db/</text>
+  <text x="480" y="295" font-family="Arial" font-size="10" fill="white">excelDb.js, index.js</text>
+  
+  <!-- Additional Routes -->
+  <rect x="70" y="330" width="280" height="60" rx="5" fill="#9b59b6" stroke="#8e44ad"/>
+  <text x="210" y="355" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">Additional Routes</text>
+  <text x="80" y="375" font-family="Arial" font-size="10" fill="white">chatbot.routes.js, recommendation.routes.js</text>
+  
+  <!-- Helper -->
+  <rect x="370" y="330" width="260" height="60" rx="5" fill="#9b59b6" stroke="#8e44ad"/>
+  <text x="500" y="355" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">helper/</text>
+  <text x="380" y="375" font-family="Arial" font-size="10" fill="white">paginationHelper.js</text>
+  
+  <!-- Configuration -->
+  <rect x="70" y="410" width="560" height="60" rx="5" fill="#95a5a6" stroke="#7f8c8d"/>
+  <text x="350" y="430" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">Configuration: .env, constants.js, package.json</text>
+  <text x="350" y="450" text-anchor="middle" font-family="Arial" font-size="10" fill="white">Environment Variables: PORT, MONGODB_URI, GEMINI_API_KEY, JWT Secrets</text>
+</svg>

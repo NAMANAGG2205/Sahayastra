@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <!-- Background -->
+  <rect width="400" height="500" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="200" y="25" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#2c3e50">UML Class Diagram - Scheme</text>
+  
+  <!-- Scheme Class Box -->
+  <rect x="50" y="50" width="300" height="430" rx="5" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+  
+  <!-- Class Name -->
+  <rect x="50" y="50" width="300" height="40" rx="5" fill="#229954"/>
+  <text x="200" y="75" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="white">Scheme</text>
+  
+  <!-- Attributes Section -->
+  <line x1="50" y1="90" x2="350" y2="90" stroke="white" stroke-width="1"/>
+  <text x="60" y="110" font-family="Arial" font-size="11" fill="white">- _id: String</text>
+  <text x="60" y="128" font-family="Arial" font-size="11" fill="white">- schemeName: String</text>
+  <text x="60" y="146" font-family="Arial" font-size="11" fill="white">- schemeShortTitle: String</text>
+  <text x="60" y="164" font-family="Arial" font-size="11" fill="white">- state: String</text>
+  <text x="60" y="182" font-family="Arial" font-size="11" fill="white">- level: String</text>
+  <text x="60" y="200" font-family="Arial" font-size="11" fill="white">- nodalMinistryName: Object</text>
+  <text x="60" y="218" font-family="Arial" font-size="11" fill="white">- tags: Array&lt;String&gt;</text>
+  <text x="60" y="236" font-family="Arial" font-size="11" fill="white">- schemeCategory: Array&lt;String&gt;</text>
+  <text x="60" y="254" font-family="Arial" font-size="11" fill="white">- detailedDescription_md: String</text>
+  <text x="60" y="272" font-family="Arial" font-size="11" fill="white">- eligibilityDescription_md: String</text>
+  <text x="60" y="290" font-family="Arial" font-size="11" fill="white">- benefits: Array&lt;Object&gt;</text>
+  <text x="60" y="308" font-family="Arial" font-size="11" fill="white">- applicationProcess: Array&lt;Object&gt;</text>
+  <text x="60" y="326" font-family="Arial" font-size="11" fill="white">- documents_required: Array&lt;Object&gt;</text>
+  <text x="60" y="344" font-family="Arial" font-size="11" fill="white">- faqs: Array&lt;Object&gt;</text>
+  <text x="60" y="362" font-family="Arial" font-size="11" fill="white">- references: Array&lt;Object&gt;</text>
+  
+  <!-- Methods Section -->
+  <line x1="50" y1="375" x2="350" y2="375" stroke="white" stroke-width="1"/>
+  <text x="60" y="395" font-family="Arial" font-size="11" fill="white">+ getById(id): Scheme</text>
+  <text x="60" y="413" font-family="Arial" font-size="11" fill="white">+ getAll(): Array&lt;Scheme&gt;</text>
+  <text x="60" y="431" font-family="Arial" font-size="11" fill="white">+ getByCategory(cat): Array&lt;Scheme&gt;</text>
+  <text x="60" y="449" font-family="Arial" font-size="11" fill="white">+ search(query): Array&lt;Scheme&gt;</text>
+  <text x="60" y="467" font-family="Arial" font-size="11" fill="white">+ filter(filters): Array&lt;Scheme&gt;</text>
+</svg>
