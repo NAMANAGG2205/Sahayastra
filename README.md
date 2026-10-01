@@ -102,3 +102,6 @@ Please read CONTRIBUTING.md for details on our code of conduct and the process f
 
 License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
+## Team Contribution
+
+Worked on the Government Scheme Recommendation System, including scheme management and recommendation-related functionality.
